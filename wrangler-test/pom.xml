@@ -31,6 +31,7 @@
       <groupId>io.cdap.wrangler</groupId>
       <artifactId>wrangler-core</artifactId>
       <version>${project.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.cdap.cdap</groupId>

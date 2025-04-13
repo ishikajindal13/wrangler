@@ -16,15 +16,16 @@
 
 package io.cdap.wrangler.parser;
 
+import java.util.List;
+
+import org.junit.Assert;
+import org.junit.Test;
+
 import io.cdap.wrangler.TestingRig;
 import io.cdap.wrangler.api.CompileStatus;
 import io.cdap.wrangler.api.Compiler;
 import io.cdap.wrangler.api.Directive;
 import io.cdap.wrangler.api.RecipeParser;
-import org.junit.Assert;
-import org.junit.Test;
-
-import java.util.List;
 
 /**
  * Tests {@link GrammarBasedParser}
@@ -74,5 +75,27 @@ public class GrammarBasedParserTest {
     List<Directive> directives = parser.parse();
     Assert.assertEquals(0, directives.size());
   }
+
+  @Test
+public void testByteSizeParsing() throws Exception {
+  String[] recipe = new String[] {
+    "my-directive 1KB"
+  };
+
+  RecipeParser parser = TestingRig.parse(recipe);
+  List<Directive> directives = parser.parse();
+  Assert.assertEquals(1, directives.size());
+}
+
+@Test
+public void testTimeDurationParsing() throws Exception {
+  String[] recipe = new String[] {
+    "my-directive 2s"
+  };
+
+  RecipeParser parser = TestingRig.parse(recipe);
+  List<Directive> directives = parser.parse();
+  Assert.assertEquals(1, directives.size());
+}
 
 }

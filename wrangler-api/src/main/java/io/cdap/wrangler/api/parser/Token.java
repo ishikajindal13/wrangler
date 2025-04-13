@@ -16,10 +16,11 @@
 
 package io.cdap.wrangler.api.parser;
 
-import com.google.gson.JsonElement;
-import io.cdap.wrangler.api.annotations.PublicEvolving;
-
 import java.io.Serializable;
+
+import com.google.gson.JsonElement;
+
+import io.cdap.wrangler.api.annotations.PublicEvolving;
 
 /**
  * The Token class represents the object that contains the value and type of
