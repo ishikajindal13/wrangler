@@ -1,3 +1,8 @@
+The ByteSize parser is designed to handle columns that store data size values like KB, MB, or GB. It automatically converts these readable units into a standard format—bytes—making it easier to work with and analyze size-related data.
+
+Likewise, the TimeDuration parser processes time-related fields expressed in units such as ms, s, min, or h. It translates all these formats into a consistent unit—milliseconds—to simplify time calculations and comparisons.
+
+Both parsers serve as helpful preprocessing tools in Wrangler. They take varied, human-friendly unit formats and turn them into clean, consistent numbers that can be used in transformations and analysis. This greatly reduces the risk of manual conversion errors and makes recipes cleaner and more effective—especially when using the aggregate-stats directive to calculate total sizes and durations.
 # Data Prep
 
 ![cm-available](https://cdap-users.herokuapp.com/assets/cm-available.svg)
